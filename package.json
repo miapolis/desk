@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "start": "ts-node src/server.ts",
-    "build": "tsc --project ./src"
+    "build": "tsc --project"
   },
   "author": "Miapolis",
   "license": "ISC",
