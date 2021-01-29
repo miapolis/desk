@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran&display=swap');
+
+:root {
+	--dark-color-a: #4b4b4b;
+	--dark-color-b: #575757;
+	--placeholder-color: rgb(162, 163, 165);
+	--panel-color: #36393fff;
+	--input-area: #303339ff;
+	--text-normal:#dcddde;
+	--text-muted: #72767d;
+	--input-outline: #222429ff;
+	--def-blue: #7289daff;
+	--light-color: #e6e9ff;
+	--overlay-light-color: #40444bff;
+	--scrollbar-auto-scrollbar-color-thumb: #202225;
+	--scrollbar-auto-scrollbar-color-track: #2f3136;
+	--scrollbar-auto-thumb: #202225;
+    --scrollbar-auto-track: #2e3338;
+	--message-hover: #32353bff;
+	--bg-color: #2f3136ff;
+	--dark-bg-color: rgb(34, 36, 39);
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+body {
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.logo-mount {
+	display: flex;
+	  justify-content: left;
+}
+
+.logo-mount span span {
+	padding: 10px;
+}
+
+@media (max-width: 60em) {
+	.logo-mount {
+		justify-content: center;
+	}
+}
+
+.unselectable {
+	-webkit-user-select: none;
+}
+
+.text-svg {
+	padding-bottom: 5px;
+}
+
+.sub-text {
+	color:var(--placeholder-color);
+}
+
+body {
+	font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	/* background: var(--bg-color); */
+	margin: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+    border: 0;
+    font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 17px;
+}
+
+.chat-body {
+	background-color: var(--dark-bg-color);
+	text-rendering: optimizeLegibility;
+}
+
+.panel-container {	
+	position: absolute;
+    top: 50%;
+	left: 50%;
+	width: -webkit-calc(100% - 100px);
+    width:    -moz-calc(100% - 100px);
+	width:         calc(100% - 100px);
+	height: -webkit-calc(100% - 100px);
+    height:    -moz-calc(100% - 100px);
+    height:         calc(100% - 100px);
+	background: var(--panel-color);
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 10px;
+	box-shadow: 0 2px 30px 0 rgb(0 0 0 / 20%);
+
+	overflow: hidden;
+	display: flex;
+	min-width: 800px;
+}
+
+.left-sidebar {
+	float: left;
+	height: 100%;
+	width: 250px;
+	background: var(--bg-color);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.main-area {
+	position: relative;
+	top:0;
+	height: 100%;
+	width: inherit;
+	background: var(--panel-color);
+	padding-bottom: 30px;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.main-area .message-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 100%;
+	width: 100%;
+	bottom: 65px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	pointer-events: all;
+}
+
+.auto-scroll {
+	scrollbar-width: auto;
+	scrollbar-color: var(--scrollbar-auto-scrollbar-color-thumb) var(--scrollbar-auto-scrollbar-color-track)
+}
+
+.auto-scroll::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+}
+
+.auto-scroll::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-auto-track);
+	border-radius: 8px
+}
+
+.auto-scroll::-webkit-scrollbar-thumb, .auto-scroll::-webkit-scrollbar-track {
+	border: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px
+}
+
+.auto-scroll::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-auto-thumb);
+    min-height: 40px
+}
+
+.auto-scroll::-webkit-scrollbar-corner {
+    background-color: transparent
+}
+
+.main-area .message-content .message {
+	position: relative;
+	padding-left: 72px;
+	padding-right: 48px!important;
+	margin-top: 1.0625rem;
+	user-select: text;
+	top: 0;
+	width: inherit;
+	min-height: 1.375rem;
+}
+
+.main-area .message-content .bottom-div {
+	width: auto;
+	height: 45px;
+}
+
+.main-area .message-content .message:hover {
+	background-color:var(--message-hover);
+}
+
+.message .message-content-area {
+	position: static;
+	width: 100%;
+	left: 0;
+    margin-left: 0;
+    padding-left: 0;
+	text-indent: 0;
+	pointer-events: all;
+}
+
+.message-profile-icon {
+	position: absolute;
+	left: 16px;
+    margin-top: calc(4px - .125rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.message .header-text {
+    position: relative;
+    color: #72767d;
+	line-height: 1.375rem;
+	vertical-align: baseline;
+	-webkit-box-direction: normal;
+	display:table-cell;
+	-webkit-user-select: none;
+}
+
+.header-start { 
+	margin-right: 0.25rem;
+	display: inline-block;
+	-webkit-box-direction: normal;
+	vertical-align: middle;
+}
+
+.message .header-text .header-start .username-text {
+	display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+	font-size: 1rem;
+	color: var(--def-blue);
+	vertical-align: middle; 
+	line-height: 1.375rem;
+	-webkit-user-select: text;
+}
+
+.message .header-text .timestamp-area {
+	display: inline-block;
+	font-size: 0.75rem;
+	margin-left: 0.25rem;
+	line-height: 1.375rem;
+	-webkit-box-direction: normal;
+	color: var(--text-muted); 
+	vertical-align: bottom;
+	-webkit-user-select: text;
+}
+
+.message .message-markup {
+	user-select: text;
+	font-size: 1rem;
+    margin-left: -72px;
+	padding-left: 72px;
+	color: var(--text-normal);
+	line-height: 1.375rem;
+	overflow: hidden;
+	text-indent: 0;
+}
+
+.main-area .bar-area {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.main-area .bar {
+	position: absolute;
+	bottom: 0px;
+	left: 16px;
+	right: 16px;
+	background: var(--overlay-light-color);
+	height: 50px;
+	box-shadow: 0 2px 3px 0 rgb(0 0 0 / 2%);
+	overflow: hidden;
+    max-height: 50vh;
+	border-radius: 8px;
+	pointer-events: none;
+}
+
+.bar .bar-input, .bar-input:focus {
+	background-color: var(--overlay-light-color);
+	color: var(--text-normal);
+	caret-color: var(--text-normal);
+	border:none;
+	vertical-align: baseline;
+	height: 100%;
+	width: 100%;
+	font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 1rem;
+	padding-left: 15px;
+	padding-right: 15px;
+	outline: 0;
+	pointer-events: all;
+}
+
+.bar .bar-input:-webkit-autofill {
+	caret-color: white;
+	box-shadow: 0 0 0px 1000px var(--input-area) inset;
+	-webkit-box-shadow: 0 0 0px 1000px var(--input-area) inset;
+    -webkit-text-fill-color: white;
+}
+
+/* ///////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////// */
+
+/* Join Page */
+.main-header {
+	color:white;
+}
+
+.container-mount {
+	position: relative;
+}
+
+.join-container {
+	position:absolute;
+	left: 300px;
+	box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+	min-width: 500px;
+	max-width: 500px;
+	margin: 50vh auto 0;
+  	transform: translateY(-50%);
+	color: #fff;
+	border-radius: 10px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: var(--panel-color);
+	border-radius: 10px;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+}
+
+.join-main h3 { text-align: center; margin-top: 10px; }
+
+.join-main p {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.join-main .form-control {
+    font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+	margin-bottom: 20px;
+}
+
+.join-main label {
+    font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+    font-size: 15px;
+    color: var(--placeholder-color);
+}
+
+.join-main input[type='text'] {
+    font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    color: white;
+	padding: 10px;
+	height: 40px;
+	width: 100%;
+	border: 1px solid;
+    border-radius: 3px;
+    background-color: var(--input-area);
+    border-color: var(--input-outline);
+	-webkit-transition: border-color .2s ease-in-out;
+    transition: border-color .2s ease-in-out;
+    	transition-property: border-color;
+    	transition-duration: 0.2s;
+    	transition-timing-function: ease-in-out;
+    	transition-delay: 0s;
+}
+
+.join-main input:-webkit-autofill {
+	caret-color: white;
+	box-shadow: 0 0 0px 1000px var(--input-area) inset;
+	-webkit-box-shadow: 0 0 0px 1000px var(--input-area) inset;
+    -webkit-text-fill-color: white;
+}
+
+.join-main input:focus {
+	outline-width: 0;
+	border-color: var(--def-blue);
+}
+
+.join-main select {
+    font-family: Catamaran,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	padding-left: 10px;
+    height: 40px;
+    width: 100%;
+	border: 1px solid;
+    border-radius: 3px;
+    background-color: var(--input-area);
+    border-color: var(--input-outline);
+	color: white;
+	outline-width: 0;
+}
+
+.rightSplit {
+	position: fixed;
+	top: 0;
+	left: 0;
+    -webkit-transition: opacity .4s ease;
+    transition: opacity .4s ease;
+    opacity: 1;
+    pointer-events: none;
+	z-index: -1;
+}
+
+.leftSplit {
+	position: relative;
+}
+
+.join-bg-img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+    -webkit-transition: opacity .2s linear .2s;
+    transition: opacity .2s linear .2s;
+	vertical-align: baseline;
+	z-index: 1;
+}
+
+.bubble-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.join-main .btn {
+	color: white;
+	background-color: var(--def-blue);
+	margin-top: 20px;
+	width: 100%;
+}
+
+.errorMessageField {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: none;
+}
+
+.errorSeparator {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+}
+
+@media all and (max-width: 1140px) {
+    .join-container{
+		position: relative;
+		left: 0;
+    }
+}

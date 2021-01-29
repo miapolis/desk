@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="./js/join.js"></script>
+		<title>Desk</title>
+	</head>
+	<body>	
+			<div class ="rightSplit" style="width: 1684px; height: 947px;">
+				<img class ="join-bg-img" src="./assets/images/fd91131ea693096d6be5e8aa99d18f9e.jpg" alt/>
+				<img class="bubble-image" src="./assets/images/Bubble.png"/>
+			</div>
+			<div class = "leftSplit">
+				<header class="main-header">
+					<h2 class = "logo-mount unselectable">
+						<i class="fab fa-discord unselectable" left="0%"></i>
+						<img class="text-svg unselectable" left="25%" src="./assets/svg/Logo.svg" width="60"/>
+					</h2>
+				</header>
+				<div class="container-mount">
+					<div class="join-container">
+						<main class="join-main">
+							<h3 class="unselectable">Welcome back!</h3>
+							<p class="sub-text unselectable">We're so excited to see you again!</p>
+							<form>
+								<div class="form-control">
+									<label id="username-label">USERNAME
+										<span id="errorSpan" style="visibility: hidden;" class="errorMessageField">
+											<span class = "errorMessageSeparator">
+												- This field is required
+											</span>
+										</span>
+									</label>
+									<input
+										type="text"
+										name="username"
+										id="username"
+									/>
+								</div>
+								<div class="form-control">
+									<label>ROOM</label>
+									<select name="room" id="room">
+										<option value="JavaScript">JavaScript</option>
+										<option value="Python">Python</option>
+										<option value="PHP">PHP</option>
+										<option value="C#">C#</option>
+										<option value="Ruby">Ruby</option>
+										<option value="Java">Java</option>
+									</select>
+								</div>
+							</form>
+							<button onclick="joinChatClicked()" class="btn">Join Chat</button>
+						</main>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

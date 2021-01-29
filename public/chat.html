@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Desk</title>
+  </head>
+  <body class="chat-body">
+    <main class="panel-container">
+      <div class="left-sidebar"></div>
+      <div class="main-area">     
+          <div class="message-content auto-scroll">
+            <div class="bottom-div"></div>
+          </div>
+        <div class="bar-area">
+          <form id="chat-form">
+            <div class="bar">
+              <input autocomplete="off" class="bar-input" type="text" id="messageSendBar" placeholder="Message #channel"></input>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+  </body
