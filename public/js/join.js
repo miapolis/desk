@@ -1,17 +1,31 @@
 const errorColor = "#f04747";
 
-joinChatClicked = () => {
-    var inputField = document.getElementById('username');
-    if (inputField.value === "") {
+joinChatClicked = async () => {
+    var usernameInput = document.getElementById('username');
+    if (usernameInput.value === "") {
         document.getElementById('username-label').style.color = errorColor;
-        document.getElementById('errorSpan').style.visibility = "visible";
-        inputField.style.borderColor = "#f04747";
-        inputField.focus();
+        document.getElementById('errorSpan-username').style.visibility = "visible";
+        usernameInput.style.borderColor = "#f04747";
+        usernameInput.focus();
         return;
+    } 
+    else {
+        document.getElementById('username-label').style.color = "rgb(162, 163, 165)";
+        document.getElementById('errorSpan-username').style.visibility = "hidden";
+        usernameInput.style.borderColor = "#7289daff";
+        usernameInput.style.outlineWidth=0;
     }
 
-    var pathname = window.location.pathname;
-    var lastSlashIndex = pathname.lastIndexOf('/');
-    var truncatedPath = pathname.substring(0, lastSlashIndex);
-    window.location.href = `${truncatedPath}/chat.html`;
+    await sendGuildId(document.getElementById('serverid').value).then(result => {
+        if(result == true) {
+            setUsername(usernameInput.value);
+            sendTo('chat.html');
+        } else {
+            var serverIdInput = document.getElementById('serverid');
+            document.getElementById('serverid-label').style.color = errorColor;
+            document.getElementById('errorSpan-serverid').style.visibility = "visible";
+            serverIdInput.style.borderColor = "#f04747";
+            serverIdInput.focus();
+        } 
+    });
 }

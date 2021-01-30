@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Catamaran&display=swap');
 
 :root {
+	--header-primary: #fff;
 	--dark-color-a: #4b4b4b;
 	--dark-color-b: #575757;
 	--placeholder-color: rgb(162, 163, 165);
@@ -183,16 +184,30 @@ a {
 	min-height: 1.375rem;
 }
 
+.main-area .message-content .message-compact {
+	position: relative;
+	padding-left: 72px;
+	padding-right: 48px!important;
+	user-select: text;
+	top: 0;
+	width: inherit;
+	min-height: 1.375rem;
+}
+
 .main-area .message-content .bottom-div {
 	width: auto;
 	height: 45px;
 }
 
-.main-area .message-content .message:hover {
+.main-area .message-content .message:hover, .message-compact:hover {
 	background-color:var(--message-hover);
 }
 
-.message .message-content-area {
+.main-area .message-compact:hover .left-timestamp  {
+	visibility: visible;
+}
+
+.message-content-area {
 	position: static;
 	width: 100%;
 	left: 0;
@@ -211,6 +226,17 @@ a {
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
+}
+
+.message-pfp-img {
+	position: absolute;
+	left: 16px;
+    margin-top: calc(4px - .125rem);
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+	cursor: pointer;
+	clip-path: url(#clip-pfp);
 }
 
 .message .header-text {
@@ -236,7 +262,7 @@ a {
 	top: 0;
 	left: 0;
 	font-size: 1rem;
-	color: var(--def-blue);
+	color: var(--header-primary);
 	vertical-align: middle; 
 	line-height: 1.375rem;
 	-webkit-user-select: text;
@@ -245,6 +271,7 @@ a {
 .message .header-text .timestamp-area {
 	display: inline-block;
 	font-size: 0.75rem;
+	left: 0;
 	margin-left: 0.25rem;
 	line-height: 1.375rem;
 	-webkit-box-direction: normal;
@@ -253,7 +280,21 @@ a {
 	-webkit-user-select: text;
 }
 
-.message .message-markup {
+.left-timestamp {
+	position: absolute;
+	left: 15px;
+    height: 1.375rem;
+	line-height: 1.375rem;
+	font-size: 0.75rem;
+	width: 56px;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	user-select: none;
+	color: var(--text-muted);
+	visibility: hidden;
+}
+
+.message-markup {
 	user-select: text;
 	font-size: 1rem;
     margin-left: -72px;

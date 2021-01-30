@@ -12,6 +12,8 @@
 		/>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="shortcut icon" href="./assets/icon213.ico"/>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="./js/core.js"></script>
 		<script src="./js/join.js"></script>
 		<title>Desk</title>
 	</head>
@@ -35,7 +37,7 @@
 							<form>
 								<div class="form-control">
 									<label id="username-label">USERNAME
-										<span id="errorSpan" style="visibility: hidden;" class="errorMessageField">
+										<span id="errorSpan-username" style="visibility: hidden;" class="errorMessageField">
 											<span class = "errorMessageSeparator">
 												- This field is required
 											</span>
@@ -48,15 +50,18 @@
 									/>
 								</div>
 								<div class="form-control">
-									<label>ROOM</label>
-									<select name="room" id="room">
-										<option value="JavaScript">JavaScript</option>
-										<option value="Python">Python</option>
-										<option value="PHP">PHP</option>
-										<option value="C#">C#</option>
-										<option value="Ruby">Ruby</option>
-										<option value="Java">Java</option>
-									</select>
+									<label id="serverid-label">SERVER ID
+										<span id="errorSpan-serverid" style="visibility: hidden;" class="errorMessageField">
+											<span class = "errorMessageSeparator">
+												- That Server ID is not recognized
+											</span>
+										</span>
+									</label>
+									<input
+										type="text"
+										name="serverid"
+										id="serverid"
+									/>
 								</div>
 							</form>
 							<button onclick="joinChatClicked()" class="btn">Join Chat</button>
