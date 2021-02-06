@@ -27,10 +27,7 @@ init = () => {
 sendGuildId = async (id) => {
     return new Promise((resolve, reject) => {
         socket.emit('guildId', id, (result) => {
-            if (result === false) {
-                // Display error
-            }
-            else { 
+            if (result !== false) { 
                 sessionStorage.setItem(SS_GUILD_ID, id); 
                 clientInfo.guildId = sessionStorage.getItem(SS_GUILD_ID);
             }

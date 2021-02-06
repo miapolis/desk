@@ -2,7 +2,6 @@ const chatForm = document.getElementById('chat-form');
 const messageContainer = document.querySelector('.message-content');
 let lastMessageSender = '';
 
-// Message submit
 chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
 

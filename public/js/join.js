@@ -17,7 +17,7 @@ joinChatClicked = async () => {
     }
 
     await sendGuildId(document.getElementById('serverid').value).then(result => {
-        if(result == true) {
+        if (result == true) {
             setUsername(usernameInput.value);
             sendTo('chat.html');
         } else {

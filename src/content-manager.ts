@@ -47,7 +47,6 @@ class GuildContainer {
 }
 
 let arr:Array<Guild> = new Array<Guild>();
-arr.push(new Guild('gorunkle', 'we'));
-arr.push(new Guild('test', 'Test Server'));
+arr.push(new Guild('example', 'Example Server'));
 
 export var Guilds:GuildContainer = new GuildContainer(arr);
