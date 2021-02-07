@@ -17,3 +17,14 @@ Hosting for Desk can be easily done via [Heroku](https://www.heroku.com). <br>
 5. Make sure the repository is connected, and either click **Enable Automatic Deploys**, or below manually click **Deploy Branch** for main
 6. Wait for the build to pass, and then click **Open app** in the top right
 7. Congratulations! Desk is now being hosted at **h<span>ttps://your-app-name.herokuapp.com**
+
+# Creating a new Desk Guild 
+Guilds and Servers can be used interchangeably. They are referred to as 'Guilds' in code to avoid confusion. 
+1. Navigate to the [content-manager](https://github.com/Miapolis/Desk/blob/main/src/content-manager.ts). Here, all the configurations for guilds are stored
+2. Add or edit existing guilds configured (the first argument for a Guild is the ID, and the second is the name)
+```js
+let arr:Array<Guild> = new Array<Guild>();
+arr.push(new Guild('example', 'Example Server'));
+```
+3. Save changes and deploy 
+4. When a user goes to the main page, in the Server ID input box they should enter the ID of your new guild
