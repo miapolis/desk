@@ -28,3 +28,5 @@ arr.push(new Guild('example', 'Example Server'));
 ```
 3. Save changes and deploy 
 4. When a user goes to the main page, in the Server ID input box they should enter the ID of your new guild
+
+## View the [Wiki](https://github.com/Miapolis/Desk/wiki)
